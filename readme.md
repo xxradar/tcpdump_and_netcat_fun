@@ -6,7 +6,7 @@ In first example, tcpdump captures traffic to http port 80 and writes it to stan
 The -U makes sure the traffic is send immediatly to the output (to avoid being buffered).
 
 ```
-tcpdump -i any -n  --immediate-mode  -U -w - port 80 >demo.pcap 
+tcpdump -i any -n -U -w - port 80 >demo.pcap 
 ```
 Hit ctrl-c to stop the capture. We can now read the capture and no errors are displayed.
 ```
@@ -16,7 +16,7 @@ tcpdump -r demo.pcap
 ### Redirect out via netcat
 Open a first terminal to capture some traffic. Std output is now redirected to netcat 
 ```
-tcpdump -i any -n  --immediate-mode  -U -w - port 80 | nc 127.0.0.1 6666
+tcpdump -i any -n -U -w - port 80 | nc 127.0.0.1 6666
 ```
 In a second terminal we can redirect the stream to a file and in the meanwhile monitor the traffic
 ```
@@ -34,7 +34,7 @@ ssh -i root@remote-host -R 6666:127.0.0.1:6666
 ```
 And now run the capture
 ```
-tcpdump -i any -n  --immediate-mode  -U -w - port 80 | nc 127.0.0.1 6666
+tcpdump -i any -n -U -w - port 80 | nc 127.0.0.1 6666
 ```
 On the local machine you can redirect 
 ```
