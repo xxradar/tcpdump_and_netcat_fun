@@ -28,3 +28,20 @@ tcpdump -r demo.pcap
 ```
 
 ### Redirect via SSH reverse tunneling
+Create an SSH session with the host your planning to run TCPdump
+```
+ssh -i root@remote-host -R 6666:127.0.0.1:6666
+```
+And now run the capture
+```
+tcpdump -i any -n  --immediate-mode  -U -w - port 80 | nc 127.0.0.1 6666
+```
+On the local machine you redirect and read the traffic
+```
+nc -l 6666 >demo.pcap 
+```
+You can now read the capture
+```
+tcpdump -r demo.pcap
+```
+
