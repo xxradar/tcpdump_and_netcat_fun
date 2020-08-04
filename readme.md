@@ -1,6 +1,6 @@
 ## #TCPDUMP #NC and #K8S fun !!
 
-### Redirect output to std out
+### Redirect output to stdout
 This tutorial explains how to tunnel tcpdump pcap traffic from a kubernetes cluster back to a remote workstation. <br>
 In the first example, tcpdump captures traffic to http port 80 and writes it to standard output (`-w -`).<br> 
 The `-U` makes sure the traffic is send immediatly to the output (to avoid being buffered).
@@ -12,7 +12,7 @@ Hit ctrl-c to stop the capture. We can now read the capture and no errors are di
 tcpdump -r demo.pcap
 ```
 
-### Redirect out via netcat
+### Redirect via netcat
 Open a first terminal to capture some traffic. Std output is now redirected to netcat 
 ```
 tcpdump -i any -n -U -w - port 80 | nc 127.0.0.1 6666
