@@ -2,7 +2,7 @@
 
 ### Redirect output to stdout
 This tutorial explains how to tunnel tcpdump pcap traffic from a kubernetes cluster back to a remote workstation. <br>
-In the first example, tcpdump captures traffic to http port 80 and writes it to standard output (`-w -`).<br> 
+In the first example, `tcpdump` captures traffic to http port 80 and writes it to standard output (`-w -`).<br> 
 The `-U` makes sure the traffic is send immediatly to the output (to avoid being buffered).
 ```
 tcpdump -i any -n -U -w - port 80 >demo.pcap 
@@ -27,7 +27,7 @@ tcpdump -r demo.pcap
 ```
 
 ### Redirect via SSH reverse tunneling
-Create an SSH session with the host your planning to run TCPdump
+Create an SSH session with the host your planning to run `tcpdump`
 ```
 ssh -i root@remote-host -R 6666:127.0.0.1:6666
 ```
