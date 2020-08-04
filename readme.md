@@ -39,7 +39,7 @@ On the local machine you can redirect
 ```
 nc -l 6666 >demo.pcap 
 ```
-and now read the captured traffic
+and read the captured traffic
 ```
 tcpdump -r demo.pcap
 ```
