@@ -36,11 +36,11 @@ And now run the capture
 ```
 tcpdump -i any -n  --immediate-mode  -U -w - port 80 | nc 127.0.0.1 6666
 ```
-On the local machine you redirect and read the traffic
+On the local machine you can redirect 
 ```
 nc -l 6666 >demo.pcap 
 ```
-You can now read the capture
+and now read the captured traffic
 ```
 tcpdump -r demo.pcap
 ```
