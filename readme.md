@@ -12,3 +12,19 @@ Hit ctrl-c to stop the capture. We can now read the capture and no errors are di
 ```
 tcpdump -r demo.pcap
 ```
+
+### Redirect out via netcat
+Open a first terminal to capture some traffic. Std output is now redirected to netcat 
+```
+tcpdump -i any -n  --immediate-mode  -U -w - port 80 | nc 127.0.0.1 6666
+```
+In a second terminal we can redirect the stream to a file and in the meanwhile monitor the traffic
+```
+nc -l 6666 >demo.pcap 
+```
+You can now read the capture
+```
+tcpdump -r demo.pcap
+```
+
+### Redirect via SSH reverse tunneling
