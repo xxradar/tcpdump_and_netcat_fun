@@ -29,7 +29,7 @@ tcpdump -r demo.pcap
 ### Redirect via SSH reverse tunneling
 Create an SSH session with the host your planning to run `tcpdump`
 ```
-ssh -i root@remote-host -R 6666:127.0.0.1:6666
+ssh root@remote-host -R 6666:127.0.0.1:6666
 ```
 And now run the capture
 ```
