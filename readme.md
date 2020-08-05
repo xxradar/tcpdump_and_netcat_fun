@@ -44,7 +44,7 @@ and read the captured traffic
 tcpdump -r demo.pcap
 ```
 ### Apply previous concept in a kubernetes cluster
-This section will demonstrate that the techniques discussed will also work for pod (and containers). 
+This section will demonstrate that the techniques discussed will also work for pods (and containers). 
 Although this is aimed at troubleshooting, it might also be an attack vector if a pod or cluster is breached<br>
 This example is based on a default commercially avialable managed kubernetes cluster.<br>
 Since SSH into the managed envirnonment is not available, I opted for a variant of the  **Redirect via netcat** example.<br>
