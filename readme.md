@@ -68,8 +68,9 @@ On the remote-host you can now inspect the `demo.pcap` file
 tcpdump -r demo.pcap
 ```
 For more advanced techniques on `tcpdump` inside containers and pods, please checkout <br>
-https://medium.com/@xxradar/how-to-tcpdump-effectively-in-kubernetes-part-1-a1546b683d2f<br>
-https://medium.com/@xxradar/how-to-tcpdump-effectively-in-docker-2ed0a09b5406<br>
+[GitHub](http://github.com)
+[how-to-tcpdump-effectively-in-kubernetes-part-1](https://medium.com/@xxradar/how-to-tcpdump-effectively-in-kubernetes-part-1-a1546b683d2f)<br>
+[how-to-tcpdump-effectively-in-docker](https://medium.com/@xxradar/how-to-tcpdump-effectively-in-docker-2ed0a09b5406)<br>
 Usefull information about the SSH usecase can be found in <br>
-https://medium.com/@xxradar/when-ssh-and-nc-meets-k8s-networking-8add420e437e
+[when-ssh-and-nc-meets-k8s-networking](https://medium.com/@xxradar/when-ssh-and-nc-meets-k8s-networking-8add420e437e)
 
