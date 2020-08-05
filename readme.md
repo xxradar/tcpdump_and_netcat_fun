@@ -47,12 +47,23 @@ tcpdump -r demo.pcap
 This section will demonstrate that the techniques discussed will also work for pods (and containers). 
 Although this is aimed at troubleshooting, it might also be an attack vector if a pod or cluster is breached<br>
 This example is based on a default commercially avialable managed kubernetes cluster.<br>
-Since SSH into the managed envirnonment is not available, I opted for a variant of the  **Redirect via netcat** example.<br>
+Since SSH into the managed envirnonment is not available, I opted for a variant of the  **Redirect via netcat** example.<br><br>
 SSH into a reachable (for the cluster) Linux server:
 ```
 ssh root@remote-host
 nc -l 6666 >demo.pcap
 ```
-
-
-
+Spin up a pod on a cluster
+```
+export KUBECONFIG=./cluster-kubeconfigdemo-dupe.yaml
+kubectl run --rm -it --image xxradar/hackon demo -- bash
+```
+Inside the container
+```
+tcpdump -i any -n -U -w - port 80 | nc remote-host 6666 &
+curl www.radarhack.com
+```
+On the remote-host you can now inspect the `demo.pcap` file
+```
+tcpdump -r demo.pcap
+```
